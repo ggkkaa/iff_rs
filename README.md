@@ -28,3 +28,25 @@ fn main() {
 }
 ```
 This code will output 'abcd'.
+
+## Installation
+Add the following to your Cargo.toml file:
+```toml
+[dependencies]
+iff_rs = "0.1.1"
+```
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contributing
+If you would like to contribute to this project, please fork the repository and create a pull request. If you have any questions, feel free to create an issue.
+
+## Features
+- [x] Read Basic IFF files
+- [ ] Write to IFF files
+- [ ] Detect IFF type
+
+## Disclaimer
+
+THIS LIBRARY IS VERY EARLY ALPHA!!! IT CANNOT WRITE OR DETECT THE TYPE OF IFF FILES AND ONLY GIVES DATA!!!
