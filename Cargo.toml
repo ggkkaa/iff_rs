@@ -1,6 +1,6 @@
 [package]
 name = "iff_rs"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2024"
 authors = ["Luka Talevski <luka.talevski.hn@gmail.com>"]
 description = "A rust crate for reading Amiga IFF files"
