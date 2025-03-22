@@ -12,6 +12,11 @@ fn create_sample_iff() -> Result<(), Error> {
     Ok(())
 }
 
+fn create_empty_iff() -> Result<(), Error> {
+    let mut file = File::create("empty.iff")?;
+    Ok(())
+}
+
 #[test]
 fn test_parse_simple_iff() {
     create_sample_iff().expect("Failed to create sample IFF file");
@@ -25,4 +30,14 @@ fn test_parse_simple_iff() {
     assert_eq!(chunk.len, 4);
     assert_eq!(chunk.data, b"abcd");
     
+}
+
+#[test]
+fn test_parse_empty_iff() {
+    create_empty_iff().expect("Failed to create empty IFF file");
+
+    let file: File = File::open("empty.iff").expect("Failed to open empty IFF file");
+    let iff = parse_iff(file);
+
+    assert!(iff.is_err(), "Empty IFF file should return an error");
 }

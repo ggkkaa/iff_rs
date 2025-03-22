@@ -2,6 +2,7 @@ use crate::chunk::IFFChunk;
 use byteorder::{BigEndian, ReadBytesExt};
 use std::io::{self, Read};
 
+/// IFFFile is a collection of IFFChunks.
 pub struct IFFFile {
     pub chunks: Vec<IFFChunk>,
 }

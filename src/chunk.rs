@@ -1,5 +1,6 @@
 type ChunkId = u32;
 
+/// IFFChunk is a chunk of data in an IFF file.
 #[derive(Debug)]
 pub struct IFFChunk {
     pub id: ChunkId,
