@@ -7,3 +7,4 @@ edition = "2024"
 name = "iff_rs"
 
 [dependencies]
+byteorder="1.5.0"
