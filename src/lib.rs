@@ -8,6 +8,7 @@ use crate::iff::process_iff;
 
 mod chunk;
 mod iff;
+mod error;
 
 /// This parses the iff file and returns a result.
 pub fn parse_iff(file: File) -> Result<IFFFile, Error> {
