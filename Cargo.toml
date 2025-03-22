@@ -5,6 +5,8 @@ edition = "2024"
 authors = ["Luka Talevski <luka.talevski.hn@gmail.com>"]
 description = "A rust crate for reading Amiga IFF files"
 license = "MIT"
+readme = "README.md"
+repository = "https://github.com/ggkkaa/iff_rs"
 
 [lib]
 name = "iff_rs"
