@@ -13,7 +13,7 @@ fn create_sample_iff() -> Result<(), Error> {
 }
 
 fn create_empty_iff() -> Result<(), Error> {
-    let mut file = File::create("empty.iff")?;
+    let _file = File::create("empty.iff")?;
     Ok(())
 }
 
