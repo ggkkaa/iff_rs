@@ -24,4 +24,5 @@ fn test_parse_simple_iff() {
     assert_eq!(chunk.id, u32::from_be_bytes(*b"DATA"));
     assert_eq!(chunk.len, 4);
     assert_eq!(chunk.data, b"abcd");
+    
 }
