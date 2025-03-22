@@ -1,6 +1,6 @@
 ![Commit Activity](https://img.shields.io/github/commit-activity/m/ggkkaa/iff_rs)
 ![Crates.io Downloads (latest version)](https://img.shields.io/crates/dv/iff_rs)
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/ggkkaa/iff_rust)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/ggkkaa/iff_rs)
 
 
 
