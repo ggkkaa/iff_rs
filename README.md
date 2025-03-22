@@ -1,3 +1,9 @@
+![Commit Activity](https://img.shields.io/github/commit-activity/m/ggkkaa/iff_rs)
+![Crates.io Downloads (latest version)](https://img.shields.io/crates/dv/iff_rs)
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/ggkkaa/iff_rust)
+
+
+
 iff_rs is a simple IFF reader library made in Rust. It reads IFF files, skips the FORM at the beginning, and returns:
 - The amount of chunks
 - A vector with all of the chunks
