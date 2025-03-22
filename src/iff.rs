@@ -1,4 +1,5 @@
 use crate::chunk::IFFChunk;
+use crate::error::IFFError;
 use byteorder::{BigEndian, ReadBytesExt};
 use std::io::{self, Read};
 
@@ -17,12 +18,16 @@ impl IFFFile {
     }
 }
 
-pub(crate) fn process_iff<R: Read>(reader: R) -> Result<IFFFile, io::Error> {
+pub(crate) fn process_iff<R: Read>(reader: R) -> Result<IFFFile, IFFError> {
     let mut iff_file = IFFFile::new();
     let mut reader = io::BufReader::new(reader);
 
     let mut header = [0u8; 4];
-    reader.read_exact(&mut header)?;
+reader.read_exact(&mut header).map_err(|e| if e.kind() == io::ErrorKind::UnexpectedEof {
+        IFFError::EmptyFile
+    } else {
+        IFFError::Io(e)
+    })?;
     let _ = reader.read_u32::<BigEndian>()?;
 
     while let Ok(chunk) = parse_chunk(&mut reader) {
