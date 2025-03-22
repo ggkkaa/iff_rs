@@ -3,7 +3,8 @@
 use std::io::BufReader;
 use std::{fs::File, io::Error};
 
-pub use crate::iff::{IFFFile, process_iff};
+pub use crate::iff::IFFFile;
+use crate::iff::process_iff;
 
 mod chunk;
 mod iff;

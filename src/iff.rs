@@ -17,7 +17,7 @@ impl IFFFile {
     }
 }
 
-pub fn process_iff<R: Read>(reader: R) -> Result<IFFFile, io::Error> {
+pub(crate) fn process_iff<R: Read>(reader: R) -> Result<IFFFile, io::Error> {
     let mut iff_file = IFFFile::new();
     let mut reader = io::BufReader::new(reader);
 
