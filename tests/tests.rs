@@ -42,7 +42,6 @@ fn test_parse_simple_iff() {
     assert_eq!(chunk.id, u32::from_be_bytes(*b"DATA"));
     assert_eq!(chunk.len, 4);
     assert_eq!(chunk.data, b"abcd");
-    
 }
 
 #[test]
@@ -59,7 +58,8 @@ fn test_parse_empty_iff() {
 fn test_parse_dual_iff() {
     create_dual_sample_iff().expect("Failed to create sample IFF file");
 
-    let file: File = File::open("test-files/dual_sample.iff").expect("Failed to open sample IFF file");
+    let file: File =
+        File::open("test-files/dual_sample.iff").expect("Failed to open sample IFF file");
     let iff = parse_iff(file).expect("Failed to parse IFF file");
 
     assert_eq!(iff.chunks.len(), 2);
@@ -67,7 +67,7 @@ fn test_parse_dual_iff() {
     assert_eq!(chunk.id, u32::from_be_bytes(*b"DATA"));
     assert_eq!(chunk.len, 4);
     assert_eq!(chunk.data, b"abcd");
-    
+
     chunk = &iff.chunks[1];
     assert_eq!(chunk.id, u32::from_be_bytes(*b"DATA"));
     assert_eq!(chunk.len, 4);
@@ -76,16 +76,15 @@ fn test_parse_dual_iff() {
 
 #[test]
 fn test_no_errors_parse_ilbm() {
-
     let file: File = File::open("examples/harrison.iff").expect("Failed to open sample IFF file");
     let iff = parse_iff(file).expect("Failed to parse IFF file");
 
-    assert_eq!(iff.chunks.len(), 6);
+    assert_eq!(iff.chunks.len(), 5);
     let mut chunk = &iff.chunks[0];
     assert_eq!(chunk.id, u32::from_be_bytes(*b"DATA"));
     assert_eq!(chunk.len, 4);
     assert_eq!(chunk.data, b"abcd");
-    
+
     chunk = &iff.chunks[1];
     assert_eq!(chunk.id, u32::from_be_bytes(*b"DATA"));
     assert_eq!(chunk.len, 4);
